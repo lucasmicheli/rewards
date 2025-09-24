@@ -65,7 +65,7 @@ body {
     display: flex;
     width: 100%;
     height: 30vw;
-    background-image: url(./assets/header.png);
+    background-image: url(/header.png);
     background-size: cover;
 }
 

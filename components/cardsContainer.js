@@ -1,12 +1,10 @@
 import React from "react";
 import Cards from "./cards";
-import getProducts from "../actions/getProducts";
-import usePagination from "../customHook/usePagination";
+import getProducts from "../lib/actions/getProducts";
+import usePagination from "../lib/customHook/usePagination";
 import ProductsHistory from "./productsHistory";
-import { LIMIT } from "../actions/constants";
-import { userContext } from '../context/userContext';
-import arrowLeft from "../assets/arrow-left.svg";
-import arrowRight from "../assets/arrow-right.svg";
+import { LIMIT } from "../lib/actions/constants";
+import { userContext } from '../lib/context/userContext';
 
 const CardsContainer = () => {
     const [products, setProducts] = React.useState([]);
@@ -50,10 +48,10 @@ const CardsContainer = () => {
             <div className="arrows">
                 <h6 className="btn-p"> Page {currentPage} / {maxPage} </h6>
                 <button className="arrow-btn" disabled={currentPage <= 1} onClick={() => prev()}> 
-                    <img src={arrowLeft} alt="prev" />
+                    <img src="/arrow-left.svg" alt="prev" />
                 </button>
                 <button className="arrow-btn" disabled={currentPage >= maxPage} onClick={() => next()}> 
-                    <img src={arrowRight} alt="next" /> 
+                    <img src="/arrow-right.svg" alt="next" />
                 </button>
             </div>
         </div>

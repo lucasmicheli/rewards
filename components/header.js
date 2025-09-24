@@ -1,7 +1,6 @@
 import React from "react";
 import AddCoins from "../components/addCoins";
-import { userContext } from '../context/userContext';
-import coin from "../assets/coin.svg";
+import { userContext } from '../lib/context/userContext';
 
 function Header() {
     const [modal, setModal] = React.useState(false);
@@ -15,7 +14,7 @@ function Header() {
                     className="button-headerCoins"
                     onClick = {() => setModal(true)} > 
                     {points}
-                    <img src={coin} alt="coin"/>
+                    <img src="/coin.svg" alt="coin"/>
                 </button>
                 <button className="switch-btn" onClick={() => setHistory(true)} style={{display: history ? "none" : "block"}}> 
                     Redeems

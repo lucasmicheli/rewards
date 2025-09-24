@@ -1,9 +1,7 @@
 import React from 'react';
-import { userContext } from '../context/userContext';
-import { LIMIT } from '../actions/constants';
-import useCustomPagination from '../customHook/usePagination';
-import arrowLeft from "../assets/arrow-left.svg";
-import arrowRight from "../assets/arrow-right.svg";
+import { userContext } from '../lib/context/userContext';
+import { LIMIT } from '../lib/actions/constants';
+import useCustomPagination from '../lib/customHook/usePagination';
 
 const ProductsHistory = () => {
     const { history, record } = React.useContext(userContext);
@@ -29,10 +27,10 @@ const ProductsHistory = () => {
             <section className="arrows" style={{ display: history ? "flex" : "none" }}>
                 <h6 className="btn-p"> Page {currentPage} / {maxPage} </h6>
                 <button className="arrow-btn" onClick={() => prev()} disabled={currentPage <= 1}>
-                    <img src={arrowLeft} alt="prev" />
+                    <img src="/arrow-left.svg" alt="prev" />
                 </button>
                 <button className="arrow-btn" onClick={() => next()} disabled={currentPage >= maxPage}>
-                <img src={arrowRight} alt="next" />
+                <img src="/arrow-right.svg" alt="next" />
                 </button>
             </section>
         </div>

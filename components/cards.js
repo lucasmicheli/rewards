@@ -1,10 +1,6 @@
 import React, {useState} from "react";
-import coin from "../assets/coin.svg";
-import buy from "../assets/buy-blue.svg";
-import postRedeem from "../actions/postRedeem.js";
-import emojiSmile from "../assets/emoji-smile.svg";
-import emojiSad from "../assets/emoji-frown.svg";
-import { userContext } from "../context/userContext";
+import postRedeem from "../lib/actions/postRedeem.js";
+import { userContext } from "../lib/context/userContext";
 
 function Cards(props) {
     const [hovered, isHovered] = useState(false);
@@ -31,16 +27,16 @@ function Cards(props) {
             { hovered ? 
             <div className="card-hovered"> 
                 <div className="buttons-card-hovered"> 
-                    <img className="buy" src={buy} alt="buy"/>
+                    <img className="buy" src="/buy-blue.svg" alt="buy"/>
                     <h5 className="card-cost"> { props.cost <= points ? props.cost : "Missing " + (props.cost - points)} </h5> 
-                    <img className="coin" src={coin} alt="coin"/>  
+                    <img className="coin" src="/coin.svg" alt="coin"/>
                 </div>
             </div>: null }
             { successRedeem === "You've redeem the product successfully" ?
             <div className="product-modal"> 
                 <button className="close" id="closeSuccessRedeeem" onClick={() => setSuccessRedeem("")}> X </button>
                 <div className="product-modal-div">
-                    <img className="emojis-modal" src={emojiSmile} alt="success" />
+                    <img className="emojis-modal" src="/emoji-smile.svg" alt="success" />
                     <h4 className="successRedeem"> {successRedeem} </h4>
                 </div>
             </div> 
@@ -48,7 +44,7 @@ function Cards(props) {
             <div className="product-modal-failed" id="modal-failed"> 
                 <button className="close" id="closeSuccessRedeeem" onClick={() => setSuccessRedeem("")}> X </button>
                 <div className="product-modal-div">
-                    <img className="emojis-modal" src={emojiSad} alt="error" />
+                    <img className="emojis-modal" src="/emoji-frown.svg" alt="error" />
                     <h4 className="successRedeem"> The transaction failed. Please try again later! </h4>
                 </div>
             </div>

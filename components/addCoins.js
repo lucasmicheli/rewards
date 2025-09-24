@@ -1,8 +1,7 @@
 import React from "react";
-import { THOUSAND, FIVETHOUSAND, SEVENTHOUSAND } from "../actions/constants";
-import postMoreCoins from "../actions/postMorePoints";
-import {userContext} from "../context/userContext";
-import coin from "../assets/coin.svg";
+import { THOUSAND, FIVETHOUSAND, SEVENTHOUSAND } from "../lib/actions/constants";
+import postMoreCoins from "../lib/actions/postMorePoints";
+import {userContext} from "../lib/context/userContext";
 
 function AddCoins(props) {
     const [show, setShow] = React.useState(false);
@@ -29,15 +28,15 @@ function AddCoins(props) {
             <section className="addCoins">
                 <h4 className="title-addCoins"> Add more coins </h4>
                 <button className="button-addCoins one" onClick={() => handleClick(THOUSAND)}>
-                    <img src={coin} alt={THOUSAND} />
+                    <img src="/coin.svg" alt={THOUSAND} />
                     {THOUSAND}
                 </button>
                 <button className="button-addCoins two" onClick={() => handleClick(FIVETHOUSAND)}>
-                    <img src={coin} alt={FIVETHOUSAND} />
+                    <img src="/coin.svg" alt={FIVETHOUSAND} />
                     {FIVETHOUSAND}
                 </button>
                 <button className="button-addCoins three" onClick={() => handleClick(SEVENTHOUSAND)}>
-                    <img src={coin} alt={SEVENTHOUSAND} />
+                    <img src="/coin.svg" alt={SEVENTHOUSAND} />
                     {SEVENTHOUSAND}
                 </button>
                 <button className="close" onClick={() => props.setModal(false)}> X </button>
